@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { HiOutlineHeart, HiOutlineAcademicCap, HiOutlineChartBar, HiOutlineVideoCamera, HiMenuAlt3, HiX } from 'react-icons/hi'
+import { HiOutlineHeart, HiOutlineVideoCamera, HiMenuAlt3, HiX } from 'react-icons/hi'
 import Introducao from './introducao'
 import { FaDatabase } from "react-icons/fa";
 import { CgGym } from "react-icons/cg";
