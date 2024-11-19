@@ -2,26 +2,30 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { HiOutlineHeart, HiOutlineAcademicCap, HiOutlineChartBar, HiOutlineInformationCircle, HiOutlineHeart as HiSolidHeart, HiOutlineVideoCamera, HiMenuAlt3, HiX } from 'react-icons/hi'
+import { HiOutlineHeart, HiOutlineAcademicCap, HiOutlineChartBar, HiOutlineVideoCamera, HiMenuAlt3, HiX } from 'react-icons/hi'
 import Introducao from './introducao'
+import { FaDatabase } from "react-icons/fa";
+import { CgGym } from "react-icons/cg";
 import Selecionar from './selecionar'
 import Anatomia from './anatomia'
+import { MdBloodtype } from "react-icons/md";
 import Circulacao from './circulacao'
 import Dados from './dados'
 import Cuidados from './cuidados'
 import Videos from './videos'
 import { motion } from 'framer-motion'
+import { FaHome } from "react-icons/fa";
 
 export default function NavigationMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
   const menuItems = [
-    { name: 'Introdução', icon: HiOutlineAcademicCap, href: '#introducao' },
+    { name: 'Introdução', icon: FaHome, href: '#introducao' },
     { name: 'Anatomia do Coração', icon: HiOutlineHeart, href: '#anatomia' },
-    { name: 'Circulação Sanguínea', icon: HiOutlineChartBar, href: '#circulacao' },
-    { name: 'Dados Importantes', icon: HiOutlineInformationCircle, href: '#dados' },
-    { name: 'Cuidados e Exercícios', icon: HiSolidHeart, href: '#cuidados' },
+    { name: 'Circulação Sanguínea', icon: MdBloodtype, href: '#circulacao' },
+    { name: 'Dados Importantes', icon: FaDatabase, href: '#dados' },
+    { name: 'Cuidados e Exercícios', icon: CgGym, href: '#cuidados' },
     { name: 'Vídeos Explicativos', icon: HiOutlineVideoCamera, href: '#videos' },
   ]
 
@@ -60,7 +64,7 @@ export default function NavigationMenu() {
 
   return (
     <div>
-      <nav className="p-2 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-600 bg-opacity-50 backdrop-blur-lg shadow-lg text-white">
+      <nav className="p-2 bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600 bg-opacity-50 backdrop-blur-lg shadow-lg text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -73,7 +77,7 @@ export default function NavigationMenu() {
                     <motion.button
                       key={item.name}
                       onClick={() => setActiveSection(item.href)}
-                      className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out flex items-center bg-opacity-0 hover:bg-white hover:bg-opacity-10"
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out flex items-center bg-opacity-0 hover:bg-white hover:bg-opacity-10 ${activeSection === item.href ? 'bg-white bg-opacity-20' : ''}`}
                       custom={index}
                       initial="hidden"
                       animate="visible"
@@ -119,7 +123,7 @@ export default function NavigationMenu() {
                     setActiveSection(item.href)
                     setIsOpen(false)
                   }}
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-red-700 transition duration-150 ease-in-out flex items-center"
+                  className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-red-700 transition duration-150 ease-in-out flex items-center ${activeSection === item.href ? 'bg-red-700' : ''}`}
                   custom={index}
                   initial="hidden"
                   animate="visible"
