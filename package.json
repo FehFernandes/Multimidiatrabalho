@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
-    "lint": "next lint",
-    "install": "npm install --legacy-peer-deps"
+    "lint": "next lint"
   },
   "dependencies": {
     "lucide-react": "^0.460.0",
